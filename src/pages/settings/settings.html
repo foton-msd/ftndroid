@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Settings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="main">
+  <ion-grid>
+    <ion-row>
+      <ion-col align="center">
+          <button ion-button (click)="getLocations()" icon-only item-end outline round default>
+              &nbsp;&nbsp;
+              <ion-icon name="locate">&nbsp;
+              </ion-icon>
+            </button><br>
+            Update Locations
+      </ion-col>
+      <ion-col align="center">
+          <button ion-button (click)="quickInfo()" icon-only item-end outline round default>
+              &nbsp;&nbsp;
+              <ion-icon name="clipboard">&nbsp;
+              </ion-icon>
+            </button><br>
+            About
+      </ion-col>
+      <ion-col align="center">
+          <button ion-button (click)="defaultAction()" icon-only item-end outline round default>
+              &nbsp;&nbsp;
+              <ion-icon name="construct">&nbsp;
+              </ion-icon>
+            </button><br>
+            ...
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

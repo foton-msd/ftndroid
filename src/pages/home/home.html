@@ -1,17 +1,41 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      IN/OUT
+    </ion-title>
+
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content padding class="main">
+  <ion-item class="buttons">
+    <button ion-button (click)="openCamera()" icon-only item-end outline round default>
+      &nbsp;
+      <ion-icon name="camera">&nbsp;
+      </ion-icon>
+    </button>
+
+    <button ion-button (click)="retryUpload()" icon-only item-end outline round default>
+      &nbsp;
+      <ion-icon name="cloud-upload">&nbsp;
+      </ion-icon>
+    </button>
+  </ion-item>
+
+  <ion-item class="location">
+    <ion-label>Location</ion-label>
+    <ion-select [(ngModel)]="loc">
+      <ion-option *ngFor="let loc of locs" value={{loc.loc_code}}>{{loc.loc_name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item class="ftn">
+    <ion-input #scan [value]="input" [(ngModel)]="foton_number" (keydown.enter)="presentConfirm()" (focusout)="forceFocus()"></ion-input>
+  </ion-item>
+
+  <ion-list>
+    <!--ngIf="this.isForUpdate === true"-->
+    <ion-item *ngFor="let newItem of newItems" class="list">{{newItem.scan_item}}</ion-item>
+  </ion-list>
+
 </ion-content>

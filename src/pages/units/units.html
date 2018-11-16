@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Units</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="main">
+  <ion-list inset>
+    <ion-item *ngFor="let user of users">
+      <h2>{{user.scan_item}}</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>

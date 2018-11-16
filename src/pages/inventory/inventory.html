@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      INVENTORY
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="main">
+  <ion-item class="buttons">
+      <button ion-button (click)="openCamera()" icon-only item-end outline round default>
+          &nbsp;
+          <ion-icon name="camera">&nbsp;
+          </ion-icon>
+        </button>
+
+    <button ion-button (click)="invUpload()" icon-only item-end outline round default>
+      &nbsp;
+      <ion-icon name="cloud-upload">&nbsp;
+      </ion-icon>
+    </button>
+  </ion-item>
+
+  <ion-item class="location">
+    <ion-label>Location</ion-label>
+    <ion-select [(ngModel)]="loc">
+      <ion-option *ngFor="let loc of locs" value={{loc.loc_code}}>{{loc.loc_name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item class="ftn">
+    <ion-input #scan [value]="input" [(ngModel)]="inv_scan" (keydown.enter)="listInv()"></ion-input>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let invItem of invItems" class="list">{{invItem.inv_scan}}</ion-item>
+  </ion-list>
+
+</ion-content>
